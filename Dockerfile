@@ -15,5 +15,6 @@ RUN pnpm build
 # Static export served by Caddy (same shape as production nginx)
 FROM caddy:2-alpine
 COPY --from=build /app/out /srv
-RUN printf ':80 {\n\troot * /srv\n\tfile_server\n\tencode gzip\n}\n' > /etc/caddy/Caddyfile
+# /api/lead.php is PHP in production; locally Caddy mocks it (dev mode, nothing is sent).
+COPY Caddyfile /etc/caddy/Caddyfile
 EXPOSE 80

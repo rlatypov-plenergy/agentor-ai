@@ -8,6 +8,8 @@ import { routing } from "@/i18n/routing";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { CookieConsent } from "@/components/CookieConsent";
+import { Boot } from "@/components/Boot";
+import { getConv } from "@/lib/conv";
 import "../globals.css";
 
 const manrope = Manrope({ subsets: ["latin", "cyrillic"], variable: "--font-manrope", display: "swap" });
@@ -31,9 +33,10 @@ export default async function LocaleLayout({ children, params }: { children: Rea
       <body>
         <NextIntlClientProvider>
           <Header />
-          <main>{children}</main>
+          <main className="pb-16 sm:pb-0">{children}</main>
           <Footer />
           <CookieConsent />
+          <Boot copy={{ sticky: getConv(locale).sticky, exit: getConv(locale).exit }} />
         </NextIntlClientProvider>
       </body>
     </html>

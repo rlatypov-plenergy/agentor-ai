@@ -33,8 +33,3 @@ export const stack = [
   "n8n", "Make", "Vapi", "OpenAI", "Supabase", "React", "Python", "PostgreSQL",
   "Odoo", "1C", "Bitrix24", "UiPath", "Telegram", "Perplexity", "Docker",
 ];
-
-// Routes that are placeholders until later phases (needed for static export).
-export const placeholderPaths: string[][] = [
-  ["consultation"], ["free-discovery"], ["ai-assessment"], ["free-mvp"], ["privacy"], ["terms"], ["cookies"],
-];

@@ -1,0 +1,11 @@
+:80 {
+	root * /srv
+	encode gzip
+	handle /api/lead.php {
+		header Content-Type application/json
+		respond `{"ok":true,"dev":true}` 200
+	}
+	handle {
+		file_server
+	}
+}

@@ -1,0 +1,177 @@
+import type { Converters, Field, Option } from "../converters-types";
+
+const o = (...pairs: string[]): Option[] => pairs.map((p) => ({ v: p, label: p }));
+const sizes = o("1–10", "11–49", "50–199", "200–999", "1,000–5,000", "5,000+");
+const countries = o("United States", "United Kingdom", "Poland", "Ukraine", "Kazakhstan", "Other");
+const industries = o("Construction", "Transport & logistics", "Manufacturing", "Public procurement", "Professional services", "E-commerce & retail", "Other");
+
+const company: Field[] = [
+  { name: "name", label: "Your name", type: "text", required: true },
+  { name: "email", label: "Work email", type: "email", required: true },
+  { name: "company", label: "Company", type: "text", required: true },
+];
+
+export const converters: Converters = {
+  common: {
+    sending: "Sending…",
+    error: "Something went wrong. Please try again or write to us directly.",
+    consent: "I agree to the processing of my data to receive a reply (see Privacy).",
+    freeMail: "Please use a work email if you can: it helps us verify the company.",
+    smallCompany: "For companies under 50 employees we suggest a free 30-minute consultation first. You can still send this form and we will route it there.",
+    thanksTitle: "Thank you, we got it",
+    thanksText: "We will reply within one business day.",
+    thanksSmall: "Because your company is under 50 employees, we will invite you to a free consultation.",
+    nextSteps: ["We review your request", "We write to you with the next step", "We agree on a time for a call"],
+    bookCall: "Book a call now",
+    required: "This field is required",
+    back: "Back",
+    next: "Next",
+    skip: "Skip",
+    step: "Step",
+    of: "of",
+    devNote: "Dev preview: the request was not sent to a real inbox.",
+  },
+  consultation: {
+    title: "Free 30-minute consultation",
+    lead: "We map your processes in a short call and show which AI agent pays off first.",
+    bullets: ["Map of your processes", "3 AI agent ideas with an ROI estimate", "Pilot plan, timeline and budget", "No obligation"],
+    calNote: "Prefer to pick a time yourself? Use the calendar below.",
+    form: {
+      submit: "Request a call",
+      fields: [...company, { name: "message", label: "What would you like to discuss?", type: "textarea" }],
+    },
+  },
+  discovery: {
+    title: "Free AI Discovery of one department",
+    lead: "Interviews, AS-IS process maps and a prioritized automation map with ROI, for qualified companies.",
+    badge: "Market value ≈ $2,000 — free for qualified companies",
+    included: { title: "What is included", items: ["Up to 5 interviews with key employees (45–60 min)", "AS-IS description of the department's business processes (BPMN-style maps + text)", "Analysis of routine, time losses and bottlenecks", "Prioritized automation map: top-5 opportunities with effort, impact and rough ROI", "60-minute results presentation"] },
+    receive: { title: "What you receive", items: ["The department's described business processes", "An automation shortlist with ROI"] },
+    value: { title: "How we value it", text: "About 40 hours at $50/h, excluding VAT.", rows: [["Interviews", "10 h"], ["Process mapping", "14 h"], ["Analysis & ROI", "8 h"], ["Report & presentation", "5 h"], ["Coordination", "3 h"]] },
+    who: "For companies with 50+ employees.",
+    form: {
+      submit: "Apply for free discovery",
+      fields: [
+        ...company,
+        { name: "website", label: "Company website", type: "url", placeholder: "https://" },
+        { name: "size", label: "Company size", type: "select", required: true, options: sizes },
+        { name: "industry", label: "Industry", type: "select", required: true, options: industries },
+        { name: "department", label: "Department for discovery", type: "text", required: true, placeholder: "Sales, support, operations…" },
+        { name: "pain", label: "Main pain", type: "textarea", required: true },
+        { name: "country", label: "Country", type: "select", required: true, options: countries },
+      ],
+    },
+  },
+  mvp: {
+    title: "Free MVP in 5 business days",
+    lead: "We build a working MVP of one AI automation on your data. Like it: pay a fixed price. Don't: pay nothing.",
+    badge: "Zero risk",
+    how: { title: "How it works", steps: [{ title: "Day 1: kick-off", text: "30-minute call to agree scope and access." }, { title: "Days 2–4: build", text: "We build the MVP for one defined process." }, { title: "Day 5: demo", text: "Live demo on your real or sample data." }] },
+    get: { title: "What you get", items: ["A working MVP of one automation or agent", "A demo on your real or sample data", "A fixed price if you want to keep it", "Code and handover if you buy it"] },
+    outcome: { title: "Two outcomes", like: "You like it: pay a fixed price and take it (code + handover) and/or continue with us.", dislike: "You don't like it: pay nothing, no obligations." },
+    conditions: { title: "Conditions", items: ["One process, scope agreed on a 30-minute kick-off call", "You provide access or sample data and a responsible person", "Limited slots per month (TODO: number)", "Companies with 50+ employees", "IP transfers after payment"] },
+    examples: { title: "Examples of 5-day MVPs", items: ["Voice agent", "Chatbot on your knowledge base", "Lead parser", "Document extraction", "n8n workflow"] },
+    faq: [
+      { q: "Who owns the code?", a: "You do. Intellectual property transfers after payment." },
+      { q: "What if we need more time?", a: "The free MVP covers one defined process in 5 business days. Anything larger we scope together." },
+      { q: "What about security and NDA?", a: "We sign an NDA before we see your data, and can work on sample data." },
+      { q: "What if we do not like the result?", a: "You pay nothing and have no obligations." },
+    ],
+    form: {
+      submit: "Request a free MVP",
+      fields: [
+        ...company,
+        { name: "size", label: "Company size", type: "select", required: true, options: sizes },
+        { name: "process", label: "Process to automate", type: "textarea", required: true },
+        { name: "systems", label: "Systems involved", type: "text", placeholder: "CRM, ERP, Telegram…" },
+        { name: "data", label: "Data availability", type: "select", required: true, options: [{ v: "yes", label: "Yes, real data" }, { v: "sample", label: "Sample data" }, { v: "no", label: "No data yet" }] },
+        { name: "success", label: "The MVP is a success if…", type: "textarea", required: true },
+        { name: "start", label: "Desired start date", type: "date" },
+      ],
+    },
+  },
+  assessment: {
+    title: "AI Automation Assessment",
+    lead: "2–3 minutes. Get an instant estimate of savings, a readiness score and top-3 automations. A personalized automation plan arrives in your inbox within 48 hours.",
+    start: "Start the assessment",
+    restart: "Start over",
+    steps: [
+      { title: "Company", skippable: true, fields: [
+        { name: "company", label: "Company name", type: "text" },
+        { name: "website", label: "Website", type: "url", placeholder: "https://" },
+        { name: "country", label: "Country", type: "select", options: countries },
+        { name: "industry", label: "Industry", type: "select", options: industries },
+        { name: "size", label: "Company size", type: "select", options: sizes },
+        { name: "revenue", label: "Annual revenue (optional)", type: "select", options: o("Under $1M", "$1–10M", "$10–50M", "$50M+") },
+        { name: "model", label: "Business model", type: "select", options: o("B2B", "B2C", "Both") },
+      ] },
+      { title: "What the company does", skippable: true, fields: [
+        { name: "about", label: "Short description", type: "textarea" },
+        { name: "products", label: "Main products or services", type: "text" },
+        { name: "customers", label: "Typical customers", type: "text" },
+        { name: "volume", label: "Monthly leads / orders / requests", type: "select", options: o("Under 100", "100–500", "500–2,000", "2,000+") },
+      ] },
+      { title: "Current systems", skippable: true, fields: [
+        { name: "systems", label: "Which systems do you use?", type: "multi", options: o("CRM", "ERP / 1C / Odoo / SAP", "Accounting", "E-commerce platform", "Telephony", "Messengers (Telegram / WhatsApp / Viber)", "Email", "Document storage", "BI", "Custom software") },
+        { name: "systemsOther", label: "Other", type: "text" },
+      ] },
+      { title: "What to automate", skippable: true, fields: [
+        { name: "departments", label: "Departments to automate", type: "multi", options: [
+          { v: "sales", label: "Sales" }, { v: "support", label: "Customer support" }, { v: "marketing", label: "Marketing" }, { v: "operations", label: "Operations / logistics" }, { v: "procurement", label: "Procurement / tenders" }, { v: "finance", label: "Finance & accounting" }, { v: "hr", label: "HR / recruiting" }, { v: "production", label: "Production / quality" }, { v: "reporting", label: "Management reporting" },
+        ] },
+        { name: "firstProcess", label: "Describe the process you would automate first", type: "textarea" },
+      ] },
+      { title: "Size of the problem", skippable: true, fields: [
+        { name: "people", label: "People involved", type: "number", placeholder: "5" },
+        { name: "hours", label: "Hours per week each spends on routine", type: "number", placeholder: "10" },
+        { name: "cost", label: "Average loaded hourly cost (USD)", type: "number", hint: "Prefilled by country; edit if you know better." },
+        { name: "errors", label: "Error / rework rate", type: "select", options: [{ v: "low", label: "Low" }, { v: "med", label: "Medium" }, { v: "high", label: "High" }] },
+        { name: "response", label: "Current response time to a client request", type: "select", options: o("Minutes", "Hours", "1 day", "Several days") },
+      ] },
+      { title: "Goals & constraints", skippable: true, fields: [
+        { name: "goals", label: "Goals", type: "multi", options: o("Cut costs", "Faster response", "More leads", "Fewer errors", "Scale without hiring", "Better reporting") },
+        { name: "sensitivity", label: "Data sensitivity", type: "select", options: [{ v: "low", label: "Low" }, { v: "med", label: "Medium" }, { v: "high", label: "High (consider a private LLM)" }] },
+        { name: "compliance", label: "Compliance requirements", type: "text", placeholder: "GDPR, …" },
+        { name: "timeline", label: "Desired timeline", type: "select", options: o("ASAP", "1–3 months", "3–6 months", "Just exploring") },
+        { name: "budget", label: "Budget range", type: "select", options: o("Under $5k", "$5–20k", "$20–50k", "$50k+", "Not sure") },
+        { name: "role", label: "Your role", type: "select", options: [{ v: "decision", label: "Decision maker" }, { v: "influencer", label: "Influencer" }, { v: "other", label: "Other" }] },
+      ] },
+      { title: "Contact", skippable: false, fields: [
+        { name: "name", label: "Your name", type: "text", required: true },
+        { name: "email", label: "Work email", type: "email", required: true },
+        { name: "phone", label: "Phone / Telegram / WhatsApp (optional)", type: "tel" },
+      ] },
+    ],
+    result: {
+      title: "Your result",
+      savedHours: "Hours saved per year",
+      savedMoney: "Estimated savings per year",
+      payback: "Payback range",
+      readiness: "Readiness score",
+      top: "Top-3 recommended automations",
+      next: "Recommended next step",
+      assumptions: "Estimate based on assumptions: about 40% of routine hours can be automated, implementation cost of $8k–$25k. It is an indication, not an offer. TODO: owner to confirm assumptions.",
+      promise: "A personalized automation plan will arrive in your inbox within 48 hours.",
+      months: "months",
+      perYear: "per year",
+      hoursYear: "hours / year",
+      nextLabels: { discovery: "Free AI Discovery of a department", mvp: "Free MVP in 5 days", consultation: "Free 30-minute consultation" },
+      bands: { low: "Early stage", mid: "Ready for a pilot", high: "Ready to scale" },
+      recs: {
+        sales: { title: "AI sales agent", text: "Lead research, scoring and outreach." },
+        support: { title: "Support chatbot / voice agent", text: "Answers from your knowledge base 24/7." },
+        marketing: { title: "Marketing automation", text: "Content and lead flows on n8n or Make." },
+        operations: { title: "Workflow automation", text: "Connect systems and remove manual hand-offs." },
+        procurement: { title: "Document & tender AI", text: "Extract requirements and draft offers." },
+        finance: { title: "Back-office automation", text: "Documents, approvals and reconciliation." },
+        hr: { title: "HR assistant", text: "Screening and scheduling automation." },
+        production: { title: "Process and quality tracking", text: "Registries and AI analysis of incidents." },
+        reporting: { title: "Reporting dashboard", text: "Live management reporting." },
+        default: { title: "Process discovery", text: "Find the best first automation target." },
+      },
+    },
+  },
+  exit: { title: "Before you go: free AI discovery", text: "Up to 5 interviews, process maps and a prioritized automation map for one department. Market value ≈ $2,000, free for qualified companies.", cta: "See how it works", close: "No, thanks" },
+  sticky: "Book a free call",
+  legal: { privacy: "Privacy policy", terms: "Terms of use", cookies: "Cookie policy", body: "This is a placeholder. The final legal text will be provided by the company before launch. TODO: legal text.", updated: "Draft" },
+};
