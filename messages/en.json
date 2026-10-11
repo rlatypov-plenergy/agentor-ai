@@ -1,0 +1,199 @@
+{
+ "nav": {
+  "services": "Services",
+  "cases": "Cases",
+  "industries": "Industries",
+  "about": "About",
+  "blog": "Blog",
+  "cta": "Book a free call",
+  "menu": "Menu",
+  "allServices": "All services"
+ },
+ "hero": {
+  "badge": "AI agents & process automation",
+  "title": "AI agents that work like your best employees",
+  "sub": "We design and ship AI agents, voice bots and automations for mid-size and large companies. Team in Poland and Ukraine.",
+  "cta1": "Get a free AI discovery",
+  "cta2": "Free MVP in 5 days"
+ },
+ "geo": {
+  "label": "Clients in",
+  "list": "US · UK · Poland · Ukraine · Kazakhstan",
+  "projects": "11 projects delivered"
+ },
+ "pains": {
+  "title": "Where companies lose time and money",
+  "items": [
+   [
+    "Routine eats the team",
+    "Managers retype data between CRM, email and spreadsheets every day."
+   ],
+   [
+    "Leads and calls get lost",
+    "After-hours calls and slow replies send customers to competitors."
+   ],
+   [
+    "No one knows where to start",
+    "AI is everywhere, but the first process to automate is unclear."
+   ]
+  ]
+ },
+ "services": {
+  "title": "What we build",
+  "items": {
+   "discovery": {
+    "title": "AI Discovery",
+    "desc": "Find where AI pays off first: interviews, AS-IS maps, automation shortlist with ROI."
+   },
+   "mapping": {
+    "title": "Business process mapping",
+    "desc": "AS-IS and TO-BE in BPMN: roles, systems, documents. The base for any automation."
+   },
+   "voice": {
+    "title": "AI voice agents",
+    "desc": "Inbound receptionist 24/7, outbound calls, booking, qualification, CRM sync."
+   },
+   "chatbots": {
+    "title": "AI chatbots & assistants",
+    "desc": "Web, Telegram, WhatsApp, Viber. Knowledge base and handoff to humans."
+   },
+   "sales": {
+    "title": "AI sales agents",
+    "desc": "Lead research, scoring, multichannel outreach and meeting booking."
+   },
+   "erp": {
+    "title": "ERP & back-office automation",
+    "desc": "1C, Odoo, Bitrix24, document flow, approvals, cost calculation."
+   },
+   "integrations": {
+    "title": "Integrations & workflows",
+    "desc": "n8n, Make, UiPath RPA, REST APIs, webhooks, legacy systems."
+   },
+   "interfaces": {
+    "title": "Custom interfaces",
+    "desc": "Dashboards, internal tools, client portals, web and mobile apps."
+   },
+   "llm": {
+    "title": "Private / local LLM",
+    "desc": "Open-weight models on your servers. Data stays inside, cost is predictable."
+   },
+   "docs": {
+    "title": "Document & tender AI",
+    "desc": "Extraction from PDFs and scans, requirement analysis, offers, translation."
+   }
+  }
+ },
+ "offer": {
+  "badge": "Market value ≈ $2,000 — free for qualified companies",
+  "title": "Free AI discovery of one department",
+  "text": "Up to 5 interviews, AS-IS process maps, and a prioritized automation map with effort, impact and rough ROI. Results presentation included.",
+  "cta": "Apply for discovery"
+ },
+ "cases": {
+  "title": "Selected cases",
+  "all": "All cases",
+  "demo": "Interface demo",
+  "items": {
+   "yotta": {
+    "title": "Yotta Wallet",
+    "meta": "US & UK · Fintech",
+    "desc": "AI SDR: lead enrichment, voice calls and a 14-day sequence, 24/7."
+   },
+   "atlanta": {
+    "title": "Atlanta Construction",
+    "meta": "USA · Construction",
+    "desc": "Voice agent and chat that book site visits and create leads in Odoo."
+   },
+   "tenderiq": {
+    "title": "TenderIQ",
+    "meta": "UA · PL · EU · Procurement",
+    "desc": "Tender collection and one-click AI requirement analysis."
+   },
+   "airpa": {
+    "title": "AIRPA",
+    "meta": "Ukraine ↔ EU · Transport",
+    "desc": "AI turns Viber group chaos into one prioritized inbox of requests."
+   }
+  }
+ },
+ "process": {
+  "title": "How we work",
+  "steps": [
+   [
+    "Discovery",
+    "We map processes and find the best targets."
+   ],
+   [
+    "Scope",
+    "One process, clear success criteria, fixed plan."
+   ],
+   [
+    "Build",
+    "Working MVP on your real or sample data."
+   ],
+   [
+    "Launch",
+    "Integration, handover, team training."
+   ],
+   [
+    "Improve",
+    "Monitoring and iterations on real results."
+   ]
+  ]
+ },
+ "stack": {
+  "title": "Tools we work with"
+ },
+ "founder": {
+  "title": "Founder",
+  "name": "Roman Latypov",
+  "role": "Founder & CEO, Agentor.ai",
+  "bio": "10+ years in business as CEO of Plenergy Europe PLC (e-commerce). PhD in Marine Machines and Devices, engineering background."
+ },
+ "faq": {
+  "title": "FAQ",
+  "items": [
+   [
+    "Who is it for?",
+    "Companies with 50–5,000 employees that want to automate routine work with AI."
+   ],
+   [
+    "Is the discovery really free?",
+    "Yes, for one department of a qualified company. We want to prove value first."
+   ],
+   [
+    "Who owns the code?",
+    "You do. IP transfers after payment."
+   ],
+   [
+    "Can data stay on our servers?",
+    "Yes. We deploy private LLMs on-premises or in a private cloud."
+   ]
+  ]
+ },
+ "final": {
+  "title": "Ready to see where AI pays off?",
+  "text": "Pick the format that suits you.",
+  "c1": "Book a free call",
+  "c2": "Free discovery",
+  "c3": "AI assessment",
+  "c4": "Free MVP"
+ },
+ "footer": {
+  "tag": "AI agents and business-process automation.",
+  "privacy": "Privacy",
+  "terms": "Terms",
+  "cookies": "Cookies",
+  "rights": "All rights reserved."
+ },
+ "cookie": {
+  "text": "We use cookies for analytics and marketing. You can accept or decline.",
+  "accept": "Accept all",
+  "decline": "Necessary only"
+ },
+ "soon": {
+  "title": "Page in progress",
+  "text": "This page will be built in the next phase.",
+  "home": "Back to home"
+ }
+}
