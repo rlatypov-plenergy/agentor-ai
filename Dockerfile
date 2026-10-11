@@ -11,10 +11,8 @@ COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 RUN pnpm build
 
-FROM base AS run
-ENV NODE_ENV=production PORT=3000 HOSTNAME=0.0.0.0
-COPY --from=build /app/.next/standalone ./
-COPY --from=build /app/.next/static ./.next/static
-COPY --from=build /app/public ./public
-EXPOSE 3000
-CMD ["node", "server.js"]
+# Static export served by Caddy (same shape as production nginx)
+FROM caddy:2-alpine
+COPY --from=build /app/out /srv
+RUN printf ':80 {\n\troot * /srv\n\tfile_server\n\tencode gzip\n}\n' > /etc/caddy/Caddyfile
+EXPOSE 80

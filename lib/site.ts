@@ -1,11 +1,11 @@
 // Mock data for preview. Real values must be confirmed — see docs/TODO-REPLACE.md
 export const site = {
   name: "Agentor.ai",
-  email: "hello@agentor.ai", // TODO: confirm
+  email: "R.latypov@plenergy.co.uk", // TODO: confirm — switch to agentor.ai mailbox
   phone: "+38 063 634 20 21",
   telegram: "latypov_roman",
   calLink: process.env.NEXT_PUBLIC_CAL_LINK ?? "#", // TODO: Cal.com link
-  upwork: "#", // TODO: Upwork link
+  upwork: "Roman L. · Expert AI Agent Developer", // TODO: Upwork link
   socials: { linkedin: "#", youtube: "#", instagram: "#", threads: "#" }, // TODO: real URLs
 };
 
@@ -32,4 +32,12 @@ export const featuredCases = [
 export const stack = [
   "n8n", "Make", "Vapi", "OpenAI", "Supabase", "React", "Python", "PostgreSQL",
   "Odoo", "1C", "Bitrix24", "UiPath", "Telegram", "Perplexity", "Docker",
+];
+
+// Routes that are placeholders until later phases (needed for static export).
+export const placeholderPaths: string[][] = [
+  ["services"], ...services.map((s) => ["services", s.slug]),
+  ["cases"], ...["imosta-ai-discovery", "yotta-wallet-ai-sdr", "atlanta-construction-voice-agent", "hi-master-ai-saas", "airpa-viber-lead-engine", "tenderiq-tender-ai", "ai-personal-assistant", "patent-ai", "ioss-hse-incidents", "fitstepper-smart-stepper", "industrial-erp"].map((c) => ["cases", c]),
+  ["industries"], ...["construction", "transport-logistics", "manufacturing", "public-procurement", "professional-services", "e-commerce-retail"].map((i) => ["industries", i]),
+  ["about"], ["blog"], ["contact"], ["consultation"], ["free-discovery"], ["ai-assessment"], ["free-mvp"], ["privacy"], ["terms"], ["cookies"],
 ];

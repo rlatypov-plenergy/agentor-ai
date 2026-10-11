@@ -2,6 +2,13 @@ import { useTranslations } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { use } from "react";
 import { Button, Section } from "@/components/ui";
+import { placeholderPaths } from "@/lib/site";
+import { routing } from "@/i18n/routing";
+
+export const dynamicParams = false;
+export function generateStaticParams() {
+  return routing.locales.flatMap((locale) => placeholderPaths.map((slug) => ({ locale, slug })));
+}
 
 // Placeholder for pages built in later phases (templates, converters).
 export default function Soon({ params }: { params: Promise<{ locale: string; slug: string[] }> }) {
