@@ -34,6 +34,9 @@ jobs:
           set net:reconnect-interval-base 3
           set net:timeout 20
           set mirror:parallel-transfer-count 2
-          mirror -R --only-newer --parallel=2 --verbose=1 ./out "$FTP_SERVER_DIR"
+          lcd ./out
+          cd "$FTP_SERVER_DIR"
+          rm -r -f out
+          mirror -R --only-newer --parallel=2 --verbose=1 . .
           bye
           EOF
