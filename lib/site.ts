@@ -36,8 +36,5 @@ export const stack = [
 
 // Routes that are placeholders until later phases (needed for static export).
 export const placeholderPaths: string[][] = [
-  ["services"], ...services.map((s) => ["services", s.slug]),
-  ["cases"], ...["imosta-ai-discovery", "yotta-wallet-ai-sdr", "atlanta-construction-voice-agent", "hi-master-ai-saas", "airpa-viber-lead-engine", "tenderiq-tender-ai", "ai-personal-assistant", "patent-ai", "ioss-hse-incidents", "fitstepper-smart-stepper", "industrial-erp"].map((c) => ["cases", c]),
-  ["industries"], ...["construction", "transport-logistics", "manufacturing", "public-procurement", "professional-services", "e-commerce-retail"].map((i) => ["industries", i]),
-  ["about"], ["blog"], ["contact"], ["consultation"], ["free-discovery"], ["ai-assessment"], ["free-mvp"], ["privacy"], ["terms"], ["cookies"],
+  ["consultation"], ["free-discovery"], ["ai-assessment"], ["free-mvp"], ["privacy"], ["terms"], ["cookies"],
 ];

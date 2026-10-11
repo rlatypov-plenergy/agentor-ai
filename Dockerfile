@@ -9,6 +9,7 @@ RUN pnpm install --frozen-lockfile
 FROM base AS build
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
+ENV NEXT_PUBLIC_SHOW_DRAFTS=1
 RUN pnpm build
 
 # Static export served by Caddy (same shape as production nginx)

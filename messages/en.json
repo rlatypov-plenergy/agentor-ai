@@ -195,5 +195,113 @@
   "title": "Page in progress",
   "text": "This page will be built in the next phase.",
   "home": "Back to home"
+ },
+ "ui": {
+  "offers": {
+   "discovery": {
+    "badge": "Market value ≈ $2,000 — free for qualified companies",
+    "title": "Free AI discovery of one department",
+    "text": "Up to 5 interviews, AS-IS process maps and a prioritized automation map with effort, impact and rough ROI.",
+    "cta": "Apply for discovery"
+   },
+   "mvp": {
+    "badge": "Zero risk",
+    "title": "Free MVP in 5 business days",
+    "text": "We build a working MVP of one automation on your data. Like it: pay a fixed price. Don't: pay nothing.",
+    "cta": "Get a free MVP"
+   },
+   "assessment": {
+    "badge": "2–3 minutes",
+    "title": "AI automation assessment",
+    "text": "Answer a few questions and get an instant estimate of savings, a readiness score and top-3 automations.",
+    "cta": "Start the assessment"
+   }
+  },
+  "forWho": "Who it is for",
+  "problems": "Problems we solve",
+  "build": "What we build",
+  "how": "How it works",
+  "deliver": "What you get",
+  "stack": "Stack",
+  "related": "Related cases",
+  "faq": "FAQ",
+  "services": {
+   "eyebrow": "Services",
+   "title": "AI agents and automation for your business",
+   "lead": "Ten services, one goal: less routine, more revenue."
+  },
+  "cases": {
+   "eyebrow": "Cases",
+   "title": "Projects we have delivered",
+   "lead": "Real products and automations. Results are shown only where we can confirm them.",
+   "all": "All",
+   "filter": "Filter by service",
+   "challenge": "Challenge",
+   "solution": "Solution",
+   "result": "Result",
+   "gallery": "Screenshots",
+   "arch": "How it works",
+   "meaning": "What this means for your company",
+   "country": "Country",
+   "industry": "Industry"
+  },
+  "industries": {
+   "eyebrow": "Industries",
+   "title": "Where we apply AI",
+   "lead": "Industry pains, relevant services and cases.",
+   "pains": "Typical pains",
+   "services": "Relevant services",
+   "cases": "Relevant cases"
+  },
+  "about": {
+   "eyebrow": "About",
+   "title": "Engineering discipline, applied to AI",
+   "lead": "Agentor.ai is a team in Poland and Ukraine building AI agents and automations for mid-size and large companies.",
+   "founderBio": "10+ years in business as CEO of Plenergy Europe PLC, an e-commerce company. PhD in Marine Machines and Devices (National University of Shipbuilding) with an engineering and mechanical design background.",
+   "team": "Team in Poland and Ukraine",
+   "teamText": "We work at the intersection of marketing, IT and engineering, from no-code MVPs on n8n, Make and Lovable to production systems on React, Python and PostgreSQL.",
+   "geo": "Geography",
+   "geoText": "Clients in the US, UK, Poland, Ukraine and Kazakhstan.",
+   "values": "How we work",
+   "valuesItems": [
+    [
+     "Concrete",
+     "Short sentences, real numbers only when we can confirm them."
+    ],
+    [
+     "Engineering-minded",
+     "Clear scope, tests and handover, not demos that break."
+    ],
+    [
+     "Honest",
+     "No invented metrics. If we do not know, we say so."
+    ]
+   ]
+  },
+  "blog": {
+   "eyebrow": "Blog",
+   "title": "Notes on AI in business",
+   "lead": "Practical articles on choosing, building and running AI automation.",
+   "read": "min read",
+   "draft": "Draft",
+   "back": "All articles",
+   "empty": "No articles yet."
+  },
+  "contact": {
+   "eyebrow": "Contact",
+   "title": "Let's talk",
+   "lead": "Pick a format or write to us directly.",
+   "email": "Email",
+   "phone": "Phone",
+   "telegram": "Telegram",
+   "upwork": "Upwork",
+   "book": "Book a free 30-minute call",
+   "hours": "We reply within one business day."
+  },
+  "crumbs": {
+   "home": "Home"
+  },
+  "view": "View case",
+  "visit": "Visit site"
  }
 }

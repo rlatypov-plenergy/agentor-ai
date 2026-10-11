@@ -17,6 +17,8 @@ jobs:
       - run: pnpm lint
       - run: pnpm typecheck
       - run: pnpm build
+        env:
+          NEXT_PUBLIC_SHOW_DRAFTS: "1"
       - name: FTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
