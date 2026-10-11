@@ -8,7 +8,11 @@ import { routing } from "@/i18n/routing";
 
 export const dynamicParams = false;
 export function generateStaticParams() {
-  return routing.locales.flatMap((locale) => visiblePosts(locale).map((p) => ({ locale, slug: p.slug })));
+  // Static export needs at least one param per locale; "_" renders a 404 when no post is published.
+  return routing.locales.flatMap((locale) => {
+    const list = visiblePosts(locale).map((p) => ({ locale, slug: p.slug }));
+    return list.length ? list : [{ locale, slug: "_" }];
+  });
 }
 
 export default async function Post({ params }: { params: Promise<{ locale: string; slug: string }> }) {
