@@ -9,7 +9,7 @@ export default async function CasesHub({ params }: { params: Promise<{ locale: s
   setRequestLocale(locale);
   const t = await getTranslations("ui");
   const c = getContent(locale);
-  const items = c.cases.map((x) => ({ slug: x.slug, title: x.title, promise: x.promise, country: x.country, industry: x.industry, services: x.services, client: x.client, img: caseImages(x)[0] }));
+  const items = c.cases.map((x) => ({ slug: x.slug, title: x.title, promise: x.promise, country: x.country, industry: x.industry, services: x.services, client: x.client, img: caseImages(x)[0], logo: x.logo }));
   return (
     <>
       <Crumbs items={[{ href: "/", label: t("crumbs.home") }, { label: t("cases.eyebrow") }]} />

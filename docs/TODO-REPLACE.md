@@ -19,3 +19,4 @@
 - [ ] Cal.com link (NEXT_PUBLIC_CAL_LINK) — consultation page shows the embed only when set
 - [ ] GTM: events are pushed to dataLayer; GTM script loads after consent once NEXT_PUBLIC_GTM_ID is set (consent hook is a TODO in CookieConsent.tsx)
 - [ ] Verify PHP is enabled for test-agentor.plenergy.ua (nginx) so /api/lead.php runs
+- [ ] Imosta: industry taken from imosta.pl (accounting/legal/admin services, Warsaw); departments and results still unknown. Confirm the client agrees to show their logo and name

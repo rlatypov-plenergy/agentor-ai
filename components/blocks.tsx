@@ -94,6 +94,8 @@ export async function CaseCard({ c }: { c: Case }) {
     <Link href={`/cases/${c.slug}`} className="group flex flex-col overflow-hidden rounded-card border border-border bg-surface transition hover:border-violet/60">
       {imgs[0] ? (
         <Image src={imgs[0]} alt={c.title} width={1600} height={900} sizes="(min-width:768px) 560px, 100vw" className="aspect-video w-full object-cover" />
+      ) : c.logo ? (
+        <div className="flex aspect-video items-center justify-center bg-surface-2 p-8"><div className="rounded-2xl bg-white px-8 py-6"><Image src={c.logo} alt={c.client} width={359} height={120} className="h-16 w-auto" /></div></div>
       ) : (
         <div className="flex aspect-video items-center justify-center bg-surface-2 font-heading text-2xl font-extrabold text-muted">{c.client}</div>
       )}

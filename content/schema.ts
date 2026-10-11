@@ -35,6 +35,7 @@ export const caseSchema = z.object({
   images: z.number().int().min(0),
   note: z.string().optional(), // e.g. "interface demo", "NDA"
   link: z.string().optional(),
+  logo: z.string().optional(), // client logo (shown on a light plate)
   todo: z.array(z.string()).optional(), // facts to confirm (shown only in docs)
 });
 

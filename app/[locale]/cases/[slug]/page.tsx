@@ -1,7 +1,8 @@
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import Image from "next/image";
 import { Link } from "@/i18n/navigation";
-import { Button, Pill, Section } from "@/components/ui";
+import { Pill, Section } from "@/components/ui";
 import { CaseCard, Crumbs, FinalCta, OfferBlock, PageHero } from "@/components/blocks";
 import { caseImages, getContent } from "@/lib/content";
 import { routing } from "@/i18n/routing";
@@ -29,8 +30,13 @@ export default async function CasePage({ params }: { params: Promise<{ locale: s
       <PageHero eyebrow={`${x.country} · ${x.industry}`} title={x.title} lead={x.promise}>
         {x.note && <Pill>{x.note}</Pill>}
         {svc.map((s) => <Link key={s.slug} href={`/services/${s.slug}`}><Pill>{s.title}</Pill></Link>)}
-        {x.link && <Button href={x.link as never} variant="ghost">{t("visit")}</Button>}
+        {x.link && <a href={x.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center rounded-full border border-border px-6 py-3 text-sm font-semibold hover:bg-surface-2">{t("visit")} ↗</a>}
       </PageHero>
+      {x.logo && (
+        <Section className="py-4">
+          <div className="inline-block rounded-2xl bg-white px-8 py-5"><Image src={x.logo} alt={x.client} width={359} height={120} className="h-14 w-auto" /></div>
+        </Section>
+      )}
 
       <Section className="py-8">
         <div className="grid gap-4 md:grid-cols-3">
