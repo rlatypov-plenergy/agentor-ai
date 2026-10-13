@@ -5,6 +5,7 @@ import { use } from "react";
 import * as Icons from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { BrowserFrame, Button, Pill, Section } from "@/components/ui";
+import { WorldMap } from "@/components/WorldMap";
 import { featuredCases, services, stack } from "@/lib/site";
 
 type IconName = keyof typeof Icons;
@@ -53,6 +54,12 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
           <span className="text-mint-ink">{t("geo.projects")}</span>
         </div>
       </div>
+
+      {/* World map */}
+      <Section className="pb-0">
+        <h2 className="mb-8 max-w-2xl">{t("ui.geoMap.title")}</h2>
+        <WorldMap names={t.raw("ui.geoMap.names") as Record<string, string>} label={t("geo.list")} />
+      </Section>
 
       {/* Pains */}
       <Section>

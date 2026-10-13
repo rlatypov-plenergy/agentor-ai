@@ -303,6 +303,16 @@
    "home": "Home"
   },
   "view": "View case",
-  "visit": "Visit site"
+  "visit": "Visit site",
+  "geoMap": {
+   "title": "Working across 5 countries",
+   "names": {
+    "US": "United States",
+    "UK": "United Kingdom",
+    "PL": "Poland",
+    "UA": "Ukraine",
+    "KZ": "Kazakhstan"
+   }
+  }
  }
 }
