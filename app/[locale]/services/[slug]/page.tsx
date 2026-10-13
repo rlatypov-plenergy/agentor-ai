@@ -18,7 +18,7 @@ export default async function ServicePage({ params }: { params: Promise<{ locale
   const s = c.services.find((x) => x.slug === slug);
   if (!s) notFound();
   const related = c.cases.filter((x) => s.cases.includes(x.slug));
-  const ld = { "@context": "https://schema.org", "@type": "Service", name: s.title, description: s.lead, provider: { "@type": "Organization", name: "Agentor.ai" } };
+  const ld = { "@context": "https://schema.org", "@type": "Service", name: s.title, description: s.lead, provider: { "@type": "Organization", name: "Agentura Labs" } };
 
   return (
     <>

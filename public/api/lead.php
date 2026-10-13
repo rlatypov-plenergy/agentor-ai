@@ -45,7 +45,7 @@ if ($cfg['LEAD_WEBHOOK_URL'] !== '') {
 }
 
 $body = "New lead: $type\n\n" . json_encode($d, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
-$mail = @mail($cfg['LEAD_EMAIL_TO'], "[Agentor.ai] $type lead", $body, "From: no-reply@agentor.ai\r\nReply-To: $email\r\nContent-Type: text/plain; charset=utf-8");
+$mail = @mail($cfg['LEAD_EMAIL_TO'], "[Agentura Labs] $type lead", $body, "From: no-reply@agentor.ai\r\nReply-To: $email\r\nContent-Type: text/plain; charset=utf-8");
 
 // Last resort so a lead is never lost: append to a private log file.
 if (!$sent && !$mail) { @file_put_contents(dirname(__DIR__, 2) . '/agentor-leads.log', $body . "\n---\n", FILE_APPEND | LOCK_EX); }

@@ -1,7 +1,7 @@
 // Mock data for preview. Real values must be confirmed — see docs/TODO-REPLACE.md
 export const site = {
-  name: "Agentor.ai",
-  email: "R.latypov@plenergy.co.uk", // TODO: confirm — switch to agentor.ai mailbox
+  name: "Agentura Labs",
+  email: "R.latypov@plenergy.co.uk", // TODO: confirm — switch to the company mailbox
   phone: "+38 063 634 20 21",
   telegram: "latypov_roman",
   calLink: process.env.NEXT_PUBLIC_CAL_LINK ?? "#", // TODO: Cal.com link

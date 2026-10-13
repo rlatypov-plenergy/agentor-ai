@@ -1,4 +1,4 @@
-# Agentor.ai website — project rules for Claude Code
+# Agentura Labs website — project rules for Claude Code
 
 - Full brief: `docs/BRIEF.md` (source of truth). Read it before any task.
 - Stack: Next.js 15 App Router, TypeScript, Tailwind v4, shadcn/ui, next-intl (en, uk), MDX content in `/content`.

@@ -38,7 +38,7 @@ export function Footer() {
       </div>
       <div className="border-t border-border px-5 py-5 text-xs text-muted">
         <div className="mx-auto flex max-w-6xl flex-wrap justify-between gap-3">
-          <span>© {new Date().getFullYear()} Agentor.ai. {t("footer.rights")}</span>
+          <span>© {new Date().getFullYear()} Agentura Labs. {t("footer.rights")}</span>
           <span className="flex gap-4">
             <Link href="/privacy">{t("footer.privacy")}</Link>
             <Link href="/terms">{t("footer.terms")}</Link>

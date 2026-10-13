@@ -16,7 +16,7 @@ const manrope = Manrope({ subsets: ["latin", "cyrillic"], variable: "--font-manr
 const inter = Inter({ subsets: ["latin", "cyrillic"], variable: "--font-inter", display: "swap" });
 
 export const metadata: Metadata = {
-  title: "Agentor.ai — AI agents & business process automation",
+  title: "Agentura Labs — AI agents & business process automation",
   description: "AI agents, voice bots and automations for mid-size and large companies.",
 };
 
