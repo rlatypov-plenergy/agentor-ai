@@ -42,7 +42,7 @@ export default async function CasePage({ params }: { params: Promise<{ locale: s
         <div className="grid gap-4 md:grid-cols-3">
           {blocks.map(([h, p]) => (
             <div key={h} className="rounded-card border border-border bg-surface p-6">
-              <div className="text-xs font-semibold uppercase tracking-wider text-mint">{h}</div>
+              <div className="text-xs font-semibold uppercase tracking-wider text-mint-ink">{h}</div>
               <p className="mt-3 text-sm leading-relaxed text-muted">{p}</p>
             </div>
           ))}
@@ -57,7 +57,7 @@ export default async function CasePage({ params }: { params: Promise<{ locale: s
           {x.flow.map((f, i) => (
             <div key={f} className="flex flex-1 items-center gap-2">
               <div className="flex-1 rounded-2xl border border-border bg-surface-2 px-4 py-4 text-center text-sm font-semibold">{f}</div>
-              {i < x.flow.length - 1 && <span className="hidden text-mint md:block" aria-hidden>→</span>}
+              {i < x.flow.length - 1 && <span className="hidden text-mint-ink md:block" aria-hidden>→</span>}
             </div>
           ))}
         </div>

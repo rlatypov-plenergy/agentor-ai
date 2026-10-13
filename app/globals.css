@@ -1,22 +1,43 @@
 @import "tailwindcss";
 
+/* Light is the default theme; dark overrides live under [data-theme="dark"]. */
 @theme {
-  --color-bg: #0b0f1e;
-  --color-surface: #161b34;
-  --color-surface-2: #1d2344;
-  --color-border: #2a3160;
-  --color-muted: #a3abcf;
+  --color-bg: #fbfbf8;
+  --color-surface: #ffffff;
+  --color-surface-2: #f3f4f8;
+  --color-border: #e5e7ef;
+  --color-muted: #5b6280;
+  --color-ink: #0b0f1e;
   --color-mint: #34e3a6;
-  --color-violet: #8b7cff;
+  --color-mint-ink: #0e9f6e; /* mint as text: needs a darker shade on light backgrounds */
+  --color-violet: #6d5dfc;
+  --color-on-mint: #0b0f1e; /* text on mint buttons, both themes */
+  --color-night: #0b0f1e; /* always-dark blocks (offer banner) */
+  --color-night-muted: #b9c0de;
+  --color-danger: #c62828;
   --font-heading: var(--font-manrope), system-ui, sans-serif;
   --font-body: var(--font-inter), system-ui, sans-serif;
   --radius-card: 20px;
 }
 
+:root[data-theme="dark"] {
+  --color-bg: #0b0f1e;
+  --color-surface: #161b34;
+  --color-surface-2: #1d2344;
+  --color-border: #2a3160;
+  --color-muted: #a3abcf;
+  --color-ink: #ffffff;
+  --color-mint-ink: #34e3a6;
+  --color-violet: #8b7cff;
+  --color-danger: #ff8a8a;
+}
+
+html { color-scheme: light; }
+html[data-theme="dark"] { color-scheme: dark; }
 html { scroll-behavior: smooth; }
 body {
   background: var(--color-bg);
-  color: #fff;
+  color: var(--color-ink);
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
 }

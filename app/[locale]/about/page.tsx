@@ -23,7 +23,7 @@ export default async function About({ params }: { params: Promise<{ locale: stri
           <div>
             <div className="text-xs uppercase tracking-wider text-violet">{t("founder.title")}</div>
             <h2 className="mt-1 text-3xl">Roman Latypov</h2>
-            <div className="text-mint">{t("founder.role")}</div>
+            <div className="text-mint-ink">{t("founder.role")}</div>
             <p className="mt-3 max-w-xl text-muted">{t("ui.about.founderBio")}</p>
           </div>
         </div>

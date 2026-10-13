@@ -13,19 +13,19 @@ export function Footer() {
           <p className="mt-3 text-sm text-muted">{t("footer.tag")}</p>
         </div>
         <div className="text-sm text-muted">
-          <div className="mb-3 font-semibold text-white">{t("nav.services")}</div>
+          <div className="mb-3 font-semibold text-ink">{t("nav.services")}</div>
           <ul className="space-y-2">
             {services.slice(0, 6).map((s) => (
-              <li key={s.slug}><Link href={`/services/${s.slug}`} className="hover:text-white">{t(`services.items.${s.key}.title`)}</Link></li>
+              <li key={s.slug}><Link href={`/services/${s.slug}`} className="hover:text-ink">{t(`services.items.${s.key}.title`)}</Link></li>
             ))}
           </ul>
         </div>
         <div className="text-sm text-muted">
           <ul className="space-y-2">
-            <li><Link href="/cases" className="hover:text-white">{t("nav.cases")}</Link></li>
-            <li><Link href="/industries" className="hover:text-white">{t("nav.industries")}</Link></li>
-            <li><Link href="/about" className="hover:text-white">{t("nav.about")}</Link></li>
-            <li><Link href="/blog" className="hover:text-white">{t("nav.blog")}</Link></li>
+            <li><Link href="/cases" className="hover:text-ink">{t("nav.cases")}</Link></li>
+            <li><Link href="/industries" className="hover:text-ink">{t("nav.industries")}</Link></li>
+            <li><Link href="/about" className="hover:text-ink">{t("nav.about")}</Link></li>
+            <li><Link href="/blog" className="hover:text-ink">{t("nav.blog")}</Link></li>
           </ul>
         </div>
         <div className="text-sm text-muted">

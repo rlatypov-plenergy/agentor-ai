@@ -24,7 +24,7 @@ export function CookieConsent() {
       <p className="flex-1 text-muted">{t("text")}</p>
       <div className="flex gap-2">
         <button onClick={() => choose("necessary")} className="rounded-full border border-border px-4 py-2">{t("decline")}</button>
-        <button onClick={() => choose("all")} className="rounded-full bg-mint px-4 py-2 font-semibold text-bg">{t("accept")}</button>
+        <button onClick={() => choose("all")} className="rounded-full bg-mint px-4 py-2 font-semibold text-on-mint">{t("accept")}</button>
       </div>
     </div>
   );

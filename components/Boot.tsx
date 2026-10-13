@@ -33,7 +33,7 @@ export function Boot({ copy }: { copy: BootCopy }) {
     <>
       {!onConverter && (
         <div className="fixed inset-x-0 bottom-0 z-30 border-t border-border bg-bg/95 p-3 backdrop-blur sm:hidden">
-          <Link href="/consultation" onClick={() => track("cta_click", { cta: "sticky_bar" })} className="block rounded-full bg-mint py-3 text-center text-sm font-semibold text-bg">{copy.sticky}</Link>
+          <Link href="/consultation" onClick={() => track("cta_click", { cta: "sticky_bar" })} className="block rounded-full bg-mint py-3 text-center text-sm font-semibold text-on-mint">{copy.sticky}</Link>
         </div>
       )}
       {exit && (
@@ -42,7 +42,7 @@ export function Boot({ copy }: { copy: BootCopy }) {
             <h2 className="text-2xl">{copy.exit.title}</h2>
             <p className="mt-3 text-sm text-muted">{copy.exit.text}</p>
             <div className="mt-6 flex gap-3">
-              <Link href="/free-discovery" onClick={() => { track("cta_click", { cta: "exit_intent" }); setExit(false); }} className="rounded-full bg-mint px-6 py-3 text-sm font-semibold text-bg">{copy.exit.cta}</Link>
+              <Link href="/free-discovery" onClick={() => { track("cta_click", { cta: "exit_intent" }); setExit(false); }} className="rounded-full bg-mint px-6 py-3 text-sm font-semibold text-on-mint">{copy.exit.cta}</Link>
               <button onClick={() => setExit(false)} className="px-3 text-sm text-muted" autoFocus>{copy.exit.close}</button>
             </div>
           </div>

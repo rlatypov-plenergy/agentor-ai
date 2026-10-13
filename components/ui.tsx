@@ -8,7 +8,7 @@ export function Button({ variant = "primary", className, ...p }: ComponentProps<
       {...p}
       className={clsx(
         "inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition",
-        variant === "primary" ? "bg-mint text-bg hover:brightness-110" : "border border-border text-white hover:bg-surface-2",
+        variant === "primary" ? "bg-mint text-on-mint hover:brightness-110" : "border border-border text-ink hover:bg-surface-2",
         className,
       )}
     />
@@ -29,7 +29,7 @@ export function Section({ id, children, className }: { id?: string; children: Re
 
 export function BrowserFrame({ children }: { children: ReactNode }) {
   return (
-    <div className="overflow-hidden rounded-2xl border border-border bg-surface shadow-2xl shadow-black/50">
+    <div className="overflow-hidden rounded-2xl border border-border bg-surface shadow-[0_30px_60px_-20px_rgba(11,15,30,0.28)]">
       <div className="flex gap-1.5 border-b border-border px-4 py-3">
         <i className="size-2.5 rounded-full bg-[#ff5f57]" />
         <i className="size-2.5 rounded-full bg-[#febc2e]" />

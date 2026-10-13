@@ -13,7 +13,7 @@ export function LangSwitch() {
           key={l}
           onClick={() => router.replace(pathname, { locale: l })}
           aria-pressed={l === locale}
-          className={`rounded-full px-2.5 py-1 uppercase ${l === locale ? "bg-surface-2 text-mint" : "text-muted"}`}
+          className={`rounded-full px-2.5 py-1 uppercase ${l === locale ? "bg-surface-2 text-mint-ink" : "text-muted"}`}
         >
           {l}
         </button>

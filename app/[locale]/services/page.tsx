@@ -22,7 +22,7 @@ export default async function ServicesHub({ params }: { params: Promise<{ locale
             const Icon = Icons[icon as keyof typeof Icons] as React.ComponentType<{ className?: string }>;
             return (
               <Link key={s.slug} href={`/services/${s.slug}`} className="rounded-card border border-border bg-surface p-6 transition hover:border-mint/60 hover:bg-surface-2">
-                <Icon className="size-6 text-mint" />
+                <Icon className="size-6 text-mint-ink" />
                 <h3 className="mt-4 text-lg font-bold">{s.title}</h3>
                 <p className="mt-2 text-sm text-muted">{s.headline}</p>
               </Link>

@@ -7,7 +7,8 @@
   "blog": "Blog",
   "cta": "Book a free call",
   "menu": "Menu",
-  "allServices": "All services"
+  "allServices": "All services",
+  "theme": "Switch theme"
  },
  "hero": {
   "badge": "AI agents & process automation",

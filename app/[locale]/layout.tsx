@@ -29,7 +29,10 @@ export default async function LocaleLayout({ children, params }: { children: Rea
   if (!hasLocale(routing.locales, locale)) notFound();
   setRequestLocale(locale);
   return (
-    <html lang={locale} className={`${manrope.variable} ${inter.variable}`}>
+    <html lang={locale} data-theme="light" suppressHydrationWarning className={`${manrope.variable} ${inter.variable}`}>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: `try{if(localStorage.getItem("agentor_theme")==="dark")document.documentElement.dataset.theme="dark"}catch(e){}` }} />
+      </head>
       <body>
         <NextIntlClientProvider>
           <Header />

@@ -1,14 +1,14 @@
 "use client";
 import type { Field } from "@/content/converters-types";
 
-const base = "mt-1 w-full rounded-xl border border-border bg-bg px-4 py-3 text-sm text-white placeholder:text-muted/60 focus:border-mint focus:outline-none";
+const base = "mt-1 w-full rounded-xl border border-border bg-bg px-4 py-3 text-sm text-ink placeholder:text-muted/60 focus:border-mint focus:outline-none";
 
 export function FieldInput({ f, value, onChange, error }: { f: Field; value: unknown; onChange: (v: unknown) => void; error?: string }) {
   const id = `f-${f.name}`;
   const str = (value as string) ?? "";
   const label = (
     <label htmlFor={id} className="block text-sm font-medium">
-      {f.label}{f.required && <span className="text-mint"> *</span>}
+      {f.label}{f.required && <span className="text-mint-ink"> *</span>}
     </label>
   );
   let control: React.ReactNode;
@@ -31,7 +31,7 @@ export function FieldInput({ f, value, onChange, error }: { f: Field; value: unk
             const on = arr.includes(o.v);
             return (
               <button type="button" key={o.v} aria-pressed={on} onClick={() => onChange(on ? arr.filter((x) => x !== o.v) : [...arr, o.v])}
-                className={`rounded-full border px-3 py-1.5 text-sm transition ${on ? "border-mint bg-mint/10 text-mint" : "border-border text-muted hover:text-white"}`}>
+                className={`rounded-full border px-3 py-1.5 text-sm transition ${on ? "border-mint bg-mint/10 text-mint-ink" : "border-border text-muted hover:text-ink"}`}>
                 {o.label}
               </button>
             );
@@ -47,7 +47,7 @@ export function FieldInput({ f, value, onChange, error }: { f: Field; value: unk
       {label}
       {control}
       {f.hint && <p className="mt-1 text-xs text-muted">{f.hint}</p>}
-      {error && <p className="mt-1 text-xs text-[#ff8a8a]">{error}</p>}
+      {error && <p className="mt-1 text-xs text-danger">{error}</p>}
     </div>
   );
 }

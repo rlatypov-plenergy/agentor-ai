@@ -19,7 +19,7 @@ export default async function Contact({ params }: { params: Promise<{ locale: st
           {rows.map(([k, v, href]) => (
             <div key={k} className="rounded-card border border-border bg-surface p-6">
               <div className="text-xs uppercase tracking-wider text-violet">{k}</div>
-              {href ? <a href={href} className="mt-2 block text-lg font-semibold hover:text-mint">{v}</a> : <div className="mt-2 text-lg font-semibold">{v}</div>}
+              {href ? <a href={href} className="mt-2 block text-lg font-semibold hover:text-mint-ink">{v}</a> : <div className="mt-2 text-lg font-semibold">{v}</div>}
             </div>
           ))}
         </div>

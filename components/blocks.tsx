@@ -25,7 +25,7 @@ export function Crumbs({ items }: { items: { href?: string; label: string }[] })
     <nav aria-label="Breadcrumb" className="mx-auto max-w-6xl px-5 pt-6 text-xs text-muted">
       {items.map((it, i) => (
         <span key={i}>
-          {it.href ? <Link href={it.href} className="hover:text-white">{it.label}</Link> : <span className="text-white">{it.label}</span>}
+          {it.href ? <Link href={it.href} className="hover:text-ink">{it.label}</Link> : <span className="text-ink">{it.label}</span>}
           {i < items.length - 1 && " / "}
         </span>
       ))}
@@ -61,7 +61,7 @@ export function Steps({ items }: { items: { title: string; text: string }[] }) {
     <ol className="mt-8 grid gap-4 md:grid-cols-[repeat(auto-fit,minmax(180px,1fr))]">
       {items.map((s, i) => (
         <li key={s.title} className="rounded-card border border-border bg-surface p-5">
-          <div className="font-heading text-2xl font-extrabold text-mint">0{i + 1}</div>
+          <div className="font-heading text-2xl font-extrabold text-mint-ink">0{i + 1}</div>
           <h3 className="mt-2 font-bold">{s.title}</h3>
           <p className="mt-1 text-sm text-muted">{s.text}</p>
         </li>
@@ -78,7 +78,7 @@ export function Faq({ items, title }: { items: { q: string; a: string }[]; title
       <div className="mt-8 divide-y divide-border rounded-card border border-border bg-surface">
         {items.map((i) => (
           <details key={i.q} className="group p-5">
-            <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold">{i.q}<span className="text-mint transition group-open:rotate-45">+</span></summary>
+            <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold">{i.q}<span className="text-mint-ink transition group-open:rotate-45">+</span></summary>
             <p className="mt-3 text-sm text-muted">{i.a}</p>
           </details>
         ))}
@@ -115,12 +115,12 @@ export async function OfferBlock({ kind = "discovery" }: { kind?: Offer }) {
   const t = await getTranslations("ui.offers");
   return (
     <Section className="py-8">
-      <div className="relative overflow-hidden rounded-[28px] border border-mint/40 bg-surface p-8 md:p-12">
+      <div className="relative overflow-hidden rounded-[28px] border border-mint/40 bg-night p-8 text-white md:p-12">
         <div className="glow-mint pointer-events-none absolute -right-20 -top-20 size-96" />
         <div className="relative max-w-2xl">
-          <Pill>{t(`${kind}.badge`)}</Pill>
+          <span className="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs text-[#C9F8E6]">{t(`${kind}.badge`)}</span>
           <h2 className="mt-5">{t(`${kind}.title`)}</h2>
-          <p className="mt-4 text-muted">{t(`${kind}.text`)}</p>
+          <p className="mt-4 text-night-muted">{t(`${kind}.text`)}</p>
           <Button href={offerHref[kind]} className="mt-6">{t(`${kind}.cta`)}</Button>
         </div>
       </div>

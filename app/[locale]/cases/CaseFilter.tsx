@@ -8,7 +8,7 @@ export type CaseItem = { slug: string; title: string; promise: string; country: 
 export function CaseFilter({ items, services, allLabel, filterLabel }: { items: CaseItem[]; services: { slug: string; title: string }[]; allLabel: string; filterLabel: string }) {
   const [f, setF] = useState<string>("all");
   const shown = f === "all" ? items : items.filter((i) => i.services.includes(f));
-  const chip = (active: boolean) => `rounded-full border px-4 py-1.5 text-sm transition ${active ? "border-mint bg-mint/10 text-mint" : "border-border text-muted hover:text-white"}`;
+  const chip = (active: boolean) => `rounded-full border px-4 py-1.5 text-sm transition ${active ? "border-mint bg-mint/10 text-mint-ink" : "border-border text-muted hover:text-ink"}`;
   return (
     <>
       <div className="flex flex-wrap gap-2" role="group" aria-label={filterLabel}>

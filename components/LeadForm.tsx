@@ -49,8 +49,8 @@ export function LeadForm({ type, copy, common, locale }: { type: FormType; copy:
         <p className="mt-2 text-muted">{small ? common.thanksSmall : common.thanksText}</p>
         <ol className="mt-5 list-decimal space-y-1 pl-5 text-sm text-muted">{common.nextSteps.map((s) => <li key={s}>{s}</li>)}</ol>
         <div className="mt-6 flex flex-wrap gap-3">
-          {site.calLink !== "#" ? <a href={`https://cal.com/${site.calLink}`} className="rounded-full bg-mint px-6 py-3 text-sm font-semibold text-bg" onClick={() => track("booking_opened")}>{common.bookCall}</a>
-            : <Link href="/consultation" className="rounded-full bg-mint px-6 py-3 text-sm font-semibold text-bg">{common.bookCall}</Link>}
+          {site.calLink !== "#" ? <a href={`https://cal.com/${site.calLink}`} className="rounded-full bg-mint px-6 py-3 text-sm font-semibold text-on-mint" onClick={() => track("booking_opened")}>{common.bookCall}</a>
+            : <Link href="/consultation" className="rounded-full bg-mint px-6 py-3 text-sm font-semibold text-on-mint">{common.bookCall}</Link>}
         </div>
         {dev && <p className="mt-4 text-xs text-muted">{common.devNote}</p>}
       </div>
@@ -67,10 +67,10 @@ export function LeadForm({ type, copy, common, locale }: { type: FormType; copy:
       {TS_KEY && (<><Script src="https://challenges.cloudflare.com/turnstile/v0/api.js" strategy="lazyOnload" /><div className="cf-turnstile" data-sitekey={TS_KEY} data-theme="dark" /></>)}
       <label className="flex items-start gap-3 text-xs text-muted">
         <input type="checkbox" checked={consent} onChange={(e) => setConsent(e.target.checked)} className="mt-0.5 accent-[#34E3A6]" />
-        <span>{common.consent}{errors.consent && <span className="ml-1 text-[#ff8a8a]">{errors.consent}</span>}</span>
+        <span>{common.consent}{errors.consent && <span className="ml-1 text-danger">{errors.consent}</span>}</span>
       </label>
-      {state === "error" && <p role="alert" className="text-sm text-[#ff8a8a]">{common.error}</p>}
-      <button disabled={state === "sending"} className="w-full rounded-full bg-mint px-6 py-3 text-sm font-semibold text-bg transition hover:brightness-110 disabled:opacity-60">
+      {state === "error" && <p role="alert" className="text-sm text-danger">{common.error}</p>}
+      <button disabled={state === "sending"} className="w-full rounded-full bg-mint px-6 py-3 text-sm font-semibold text-on-mint transition hover:brightness-110 disabled:opacity-60">
         {state === "sending" ? common.sending : copy.submit}
       </button>
     </form>

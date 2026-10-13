@@ -31,16 +31,16 @@ export default async function Post({ params }: { params: Promise<{ locale: strin
           <h1 className="mt-3 !text-4xl md:!text-5xl">{p.title}</h1>
           <p className="mt-4 text-lg text-muted">{p.excerpt}</p>
         </Section>
-        {/* Light reading surface for long-form text */}
-        <div className="bg-white text-bg">
+        {/* Reading surface for long-form text */}
+        <div className="border-y border-border bg-surface">
           <Section className="max-w-3xl py-12">
             {p.body.map((b, i) => (
               <div key={i} className="mb-6">
                 {b.h && <h2 className="mb-2 !text-2xl">{b.h}</h2>}
-                <p className="leading-relaxed text-bg/80">{b.p}</p>
+                <p className="leading-relaxed text-muted">{b.p}</p>
               </div>
             ))}
-            <Link href="/blog" className="text-sm font-semibold text-bg underline">← {t("blog.back")}</Link>
+            <Link href="/blog" className="text-sm font-semibold text-ink underline">← {t("blog.back")}</Link>
           </Section>
         </div>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }} />

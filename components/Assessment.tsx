@@ -80,7 +80,7 @@ export function Assessment({ copy, common, locale }: { copy: A; common: Common; 
   }
 
   if (!started) {
-    return <button onClick={() => { setStarted(true); track("assessment_step_1"); }} className="rounded-full bg-mint px-8 py-3 text-sm font-semibold text-bg">{copy.start}</button>;
+    return <button onClick={() => { setStarted(true); track("assessment_step_1"); }} className="rounded-full bg-mint px-8 py-3 text-sm font-semibold text-on-mint">{copy.start}</button>;
   }
 
   if (phase === "result") {
@@ -102,8 +102,8 @@ export function Assessment({ copy, common, locale }: { copy: A; common: Common; 
           {r.recs.map((k) => { const rec = copy.result.recs[k] ?? copy.result.recs.default; return <li key={k} className="rounded-2xl border border-border bg-surface-2 p-4"><div className="font-semibold">{rec.title}</div><div className="mt-1 text-sm text-muted">{rec.text}</div></li>; })}
         </ul>
         <h3 className="mt-8 font-bold">{copy.result.next}</h3>
-        <Link href={nextHref} className="mt-3 inline-flex rounded-full bg-mint px-6 py-3 text-sm font-semibold text-bg">{copy.result.nextLabels[r.next]}</Link>
-        <p className="mt-6 text-sm text-mint">{copy.result.promise}</p>
+        <Link href={nextHref} className="mt-3 inline-flex rounded-full bg-mint px-6 py-3 text-sm font-semibold text-on-mint">{copy.result.nextLabels[r.next]}</Link>
+        <p className="mt-6 text-sm text-mint-ink">{copy.result.promise}</p>
         <p className="mt-3 text-xs text-muted">{copy.result.assumptions}</p>
         <button onClick={() => { setV({}); setI(0); setPhase("form"); setStarted(false); }} className="mt-4 text-xs text-muted underline">{copy.restart}</button>
       </div>
@@ -120,12 +120,12 @@ export function Assessment({ copy, common, locale }: { copy: A; common: Common; 
         {step.fields.map((f) => <FieldInput key={f.name} f={f} value={v[f.name]} onChange={(val) => set(f.name, val)} error={err[f.name]} />)}
         {last && email.includes("@") && isFreeMail(email) && <p className="text-xs text-violet">{common.freeMail}</p>}
       </div>
-      {phase === "error" && <p role="alert" className="mt-4 text-sm text-[#ff8a8a]">{common.error}</p>}
+      {phase === "error" && <p role="alert" className="mt-4 text-sm text-danger">{common.error}</p>}
       <div className="mt-8 flex items-center justify-between gap-3">
         <button type="button" disabled={i === 0} onClick={() => go(i - 1)} className="rounded-full border border-border px-5 py-2.5 text-sm disabled:opacity-30">{common.back}</button>
         <div className="flex gap-2">
           {step.skippable && !last && <button type="button" onClick={() => go(i + 1)} className="px-3 text-sm text-muted">{common.skip}</button>}
-          <button type="button" onClick={next} disabled={phase === "sending"} className="rounded-full bg-mint px-6 py-2.5 text-sm font-semibold text-bg disabled:opacity-60">{phase === "sending" ? common.sending : last ? copy.result.title : common.next}</button>
+          <button type="button" onClick={next} disabled={phase === "sending"} className="rounded-full bg-mint px-6 py-2.5 text-sm font-semibold text-on-mint disabled:opacity-60">{phase === "sending" ? common.sending : last ? copy.result.title : common.next}</button>
         </div>
       </div>
     </div>
@@ -133,5 +133,5 @@ export function Assessment({ copy, common, locale }: { copy: A; common: Common; 
 }
 
 function Stat({ label, value, sub }: { label: string; value: string; sub: string }) {
-  return <div className="rounded-2xl border border-border bg-surface-2 p-4"><div className="text-xs text-muted">{label}</div><div className="mt-1 font-heading text-2xl font-extrabold text-mint">{value}</div><div className="text-xs text-muted">{sub}</div></div>;
+  return <div className="rounded-2xl border border-border bg-surface-2 p-4"><div className="text-xs text-muted">{label}</div><div className="mt-1 font-heading text-2xl font-extrabold text-mint-ink">{value}</div><div className="text-xs text-muted">{sub}</div></div>;
 }

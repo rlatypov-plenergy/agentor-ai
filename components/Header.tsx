@@ -5,6 +5,7 @@ import { ChevronDown, Menu, X } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { Logo } from "./Logo";
 import { LangSwitch } from "./LangSwitch";
+import { ThemeToggle } from "./ThemeToggle";
 import { Button } from "./ui";
 import { services } from "@/lib/site";
 
@@ -26,7 +27,7 @@ export function Header() {
 
         <nav className="hidden items-center gap-6 text-sm text-muted lg:flex">
           <div className="relative" onMouseEnter={() => setMega(true)} onMouseLeave={() => setMega(false)}>
-            <button className="flex items-center gap-1 hover:text-white" aria-expanded={mega} onClick={() => setMega(!mega)}>
+            <button className="flex items-center gap-1 hover:text-ink" aria-expanded={mega} onClick={() => setMega(!mega)}>
               {t("nav.services")} <ChevronDown size={14} />
             </button>
             {mega && (
@@ -34,7 +35,7 @@ export function Header() {
                 <div className="grid grid-cols-2 gap-1 rounded-card border border-border bg-surface p-3 shadow-2xl">
                   {services.map((s) => (
                     <Link key={s.slug} href={`/services/${s.slug}`} onClick={() => setMega(false)} className="rounded-xl p-3 hover:bg-surface-2">
-                      <div className="text-sm font-semibold text-white">{t(`services.items.${s.key}.title`)}</div>
+                      <div className="text-sm font-semibold text-ink">{t(`services.items.${s.key}.title`)}</div>
                       <div className="mt-0.5 text-xs leading-snug">{t(`services.items.${s.key}.desc`)}</div>
                     </Link>
                   ))}
@@ -43,12 +44,13 @@ export function Header() {
             )}
           </div>
           {links.map(([href, label]) => (
-            <Link key={href} href={href} className="hover:text-white">{label}</Link>
+            <Link key={href} href={href} className="hover:text-ink">{label}</Link>
           ))}
         </nav>
 
         <div className="flex items-center gap-3">
           <LangSwitch />
+          <ThemeToggle label={t("nav.theme")} />
           <Button href="/consultation" className="hidden !py-2 sm:inline-flex">{t("nav.cta")}</Button>
           <button className="lg:hidden" aria-label={t("nav.menu")} onClick={() => setOpen(!open)}>
             {open ? <X /> : <Menu />}

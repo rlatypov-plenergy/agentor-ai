@@ -49,8 +49,8 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
       {/* Geography */}
       <div className="border-y border-border bg-surface/40">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-5 py-5 text-sm text-muted">
-          <span>{t("geo.label")}: <b className="text-white">{t("geo.list")}</b></span>
-          <span className="text-mint">{t("geo.projects")}</span>
+          <span>{t("geo.label")}: <b className="text-ink">{t("geo.list")}</b></span>
+          <span className="text-mint-ink">{t("geo.projects")}</span>
         </div>
       </div>
 
@@ -75,7 +75,7 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
             const Icon = Icons[s.icon as IconName] as React.ComponentType<{ className?: string }>;
             return (
               <Link key={s.slug} href={`/services/${s.slug}`} className="group rounded-card border border-border bg-surface p-6 transition hover:border-mint/60 hover:bg-surface-2">
-                <Icon className="size-6 text-mint" />
+                <Icon className="size-6 text-mint-ink" />
                 <h3 className="mt-4 text-lg font-bold">{t(`services.items.${s.key}.title`)}</h3>
                 <p className="mt-2 text-sm text-muted">{t(`services.items.${s.key}.desc`)}</p>
               </Link>
@@ -86,12 +86,12 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
 
       {/* Flagship offer */}
       <Section className="py-8">
-        <div className="relative overflow-hidden rounded-[28px] border border-mint/40 bg-surface p-8 md:p-12">
+        <div className="relative overflow-hidden rounded-[28px] border border-mint/40 bg-night p-8 text-white md:p-12">
           <div className="glow-mint pointer-events-none absolute -right-20 -top-20 size-96" />
           <div className="relative max-w-2xl">
-            <Pill>{t("offer.badge")}</Pill>
+            <span className="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs text-[#C9F8E6]">{t("offer.badge")}</span>
             <h2 className="mt-5">{t("offer.title")}</h2>
-            <p className="mt-4 text-muted">{t("offer.text")}</p>
+            <p className="mt-4 text-night-muted">{t("offer.text")}</p>
             <Button href="/free-discovery" className="mt-6">{t("offer.cta")}</Button>
           </div>
         </div>
@@ -101,7 +101,7 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
       <Section>
         <div className="flex items-end justify-between gap-4">
           <h2>{t("cases.title")}</h2>
-          <Link href="/cases" className="text-sm text-mint">{t("cases.all")} →</Link>
+          <Link href="/cases" className="text-sm text-mint-ink">{t("cases.all")} →</Link>
         </div>
         <div className="mt-10 grid gap-5 md:grid-cols-2">
           {featuredCases.map((c) => (
@@ -123,7 +123,7 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
         <ol className="mt-10 grid gap-4 md:grid-cols-5">
           {steps.map(([title, text], i) => (
             <li key={title} className="rounded-card border border-border bg-surface p-5">
-              <div className="font-heading text-3xl font-extrabold text-mint">0{i + 1}</div>
+              <div className="font-heading text-3xl font-extrabold text-mint-ink">0{i + 1}</div>
               <h3 className="mt-3 font-bold">{title}</h3>
               <p className="mt-1 text-sm text-muted">{text}</p>
             </li>
@@ -144,7 +144,7 @@ export default function Home({ params }: { params: Promise<{ locale: string }> }
           <div>
             <div className="text-xs uppercase tracking-wider text-violet">{t("founder.title")}</div>
             <h2 className="mt-1 text-3xl">{t("founder.name")}</h2>
-            <div className="text-mint">{t("founder.role")}</div>
+            <div className="text-mint-ink">{t("founder.role")}</div>
             <p className="mt-3 max-w-xl text-muted">{t("founder.bio")}</p>
           </div>
         </div>
